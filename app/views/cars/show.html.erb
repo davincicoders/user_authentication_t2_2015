@@ -21,6 +21,6 @@
   <dd><%= @car.year %></dd>
 
   <dt>Price:</dt>
-  <dd><%= @car.price %></dd>
+  <dd><%= number_to_currency(@car.price) %></dd>
 
 </dl>

@@ -28,7 +28,7 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       if @car.save
-        format.html { redirect_to @car, notice: 'Car was successfully created.' }
+        format.html { redirect_to root_path, notice: "#{@car.year} #{@car.make} #{@car.model} created" }
         format.json { render :show, status: :created, location: @car }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CarsController < ApplicationController
   def update
     respond_to do |format|
       if @car.update(car_params)
-        format.html { redirect_to @car, notice: 'Car was successfully updated.' }
+        format.html { redirect_to @car, notice: "#{@car.year} #{@car.make} #{@car.model} updated" }
         format.json { render :show, status: :ok, location: @car }
       else
         format.html { render :edit }
