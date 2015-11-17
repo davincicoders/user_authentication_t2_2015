@@ -48,11 +48,10 @@ feature 'User Authentication' do
     click_link('Login')
 
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Password', with: 'NOT_YOUR_PASSWORD'
 
     click_button('Login')
 
-    expect(page).to have_text("Welcome back #{user.first_name.capitalize}")
-    expect(page).to have_text("Signed in as #{user.email}")
+    expect(page).to have_text('Invalid email or password')
   end
 end
