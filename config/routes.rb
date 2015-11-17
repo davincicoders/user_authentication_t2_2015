@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   resources :cars
 
+  resources :users, only: [:new, :create],
+    path_names: { new: 'signup' }
+
   # The priority ics based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
