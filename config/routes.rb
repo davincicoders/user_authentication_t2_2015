@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'login' => 'sessions#login'
   post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
   # The priority ics based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
